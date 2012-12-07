@@ -45,7 +45,7 @@
 
 static const CGFloat kMargin = 0.0f;
 static const CGFloat kPadding = 0.0f;
-static const CGFloat kPromptMargin = 40.0f;
+static const CGFloat kPromptMargin = 40.0;
 static const CGFloat kPagerHeight = 20.0f;
 static const CGFloat kWobbleRadians = 1.5f;
 static const CGFloat kSpringLoadFraction = 0.18f;

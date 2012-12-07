@@ -22,12 +22,18 @@
   NSString* _caption;
   NSDate*   _timestamp;
   NSString* _imageURL;
+  NSString* _thumbImageURL;
+  NSString* _from;
+  TTTableMessageItem* _forwardItem;
 }
 
 @property (nonatomic, copy)   NSString* title;
 @property (nonatomic, copy)   NSString* caption;
 @property (nonatomic, retain) NSDate*   timestamp;
 @property (nonatomic, copy)   NSString* imageURL;
+@property (nonatomic, copy)   NSString* thumbImageURL;
+@property (nonatomic, copy)   NSString* from;
+@property (nonatomic, retain)   TTTableMessageItem* forwardItem;
 
 + (id)itemWithTitle:(NSString*)title caption:(NSString*)caption text:(NSString*)text
           timestamp:(NSDate*)timestamp URL:(NSString*)URL;

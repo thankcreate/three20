@@ -40,4 +40,11 @@
 
 @property (nonatomic, retain) TTTableHeaderDragRefreshView* headerView;
 
+- (void)scrollViewDidScroll:(UIScrollView*)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate;
+- (void)modelDidStartLoad:(id<TTModel>)model;
+- (void)modelDidFinishLoad:(id<TTModel>)model;
+- (void)model:(id<TTModel>)model didFailLoadWithError:(NSError*)error;
+- (void)modelDidCancelLoad:(id<TTModel>)model;
+
 @end

@@ -157,7 +157,7 @@
     _URL = [URL copy];
     _smallURL = [smallURL copy];
     _thumbURL = [smallURL copy];
-    _size = size;
+   // _size = size;
     _caption = [caption copy];
     _index = NSIntegerMax;
   }

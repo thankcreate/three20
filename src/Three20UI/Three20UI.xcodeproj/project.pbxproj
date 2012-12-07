@@ -228,7 +228,7 @@
 		6E6456CE1184D4DA00F08CB1 /* TTTableLinkedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6456461184D4DA00F08CB1 /* TTTableLinkedItemCell.m */; };
 		6E6456CF1184D4DA00F08CB1 /* TTTableLongTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6456471184D4DA00F08CB1 /* TTTableLongTextItem.m */; };
 		6E6456D01184D4DA00F08CB1 /* TTTableMessageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6456481184D4DA00F08CB1 /* TTTableMessageItem.m */; };
-		6E6456D11184D4DA00F08CB1 /* TTTableMessageItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6456491184D4DA00F08CB1 /* TTTableMessageItemCell.m */; };
+		6E6456D11184D4DA00F08CB1 /* TTTableMessageItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6456491184D4DA00F08CB1 /* TTTableMessageItemCell.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		6E6456D21184D4DA00F08CB1 /* TTTableMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64564A1184D4DA00F08CB1 /* TTTableMoreButton.m */; };
 		6E6456D31184D4DA00F08CB1 /* TTTableMoreButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64564B1184D4DA00F08CB1 /* TTTableMoreButtonCell.m */; };
 		6E6456D41184D4DA00F08CB1 /* TTTableRightCaptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64564C1184D4DA00F08CB1 /* TTTableRightCaptionItem.m */; };

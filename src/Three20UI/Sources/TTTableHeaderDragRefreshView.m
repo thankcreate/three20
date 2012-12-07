@@ -166,12 +166,14 @@
     _lastUpdatedDate = [newDate retain];
 
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
+//    [formatter setDateStyle:NSDateFormatterShortStyle];
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+      NSString* st = [formatter stringFromDate:[NSDate date]];
     _lastUpdatedLabel.text = [NSString stringWithFormat:
-                              TTLocalizedString(@"Last updated: %@",
-                                                @"The last time the table view was updated."),
-                              [formatter stringFromDate:_lastUpdatedDate]];
+                              @"上次更新: %@",
+                             // [formatter stringFromDate:_lastUpdatedDate]];
+                               st];
     [formatter release];
 
   } else {
@@ -194,24 +196,22 @@
     case TTTableHeaderDragRefreshReleaseToReload: {
       [self showActivity:NO animated:NO];
       [self setImageFlipped:YES];
-      _statusLabel.text = TTLocalizedString(@"Release to update...",
-                                            @"Release the table view to update the contents.");
+      _statusLabel.text = @"好啦，快松开啦！";
+                                            
       break;
     }
 
     case TTTableHeaderDragRefreshPullToReload: {
       [self showActivity:NO animated:NO];
       [self setImageFlipped:NO];
-      _statusLabel.text = TTLocalizedString(@"Pull down to update...",
-                                            @"Drag the table view down to update the contents.");
+      _statusLabel.text = @"下拉以更新";
       break;
     }
 
     case TTTableHeaderDragRefreshLoading: {
       [self showActivity:YES animated:YES];
       [self setImageFlipped:NO];
-      _statusLabel.text = TTLocalizedString(@"Updating...",
-                                            @"Updating the contents of a table view.");
+      _statusLabel.text = @"少女更新中...";
       break;
     }
 

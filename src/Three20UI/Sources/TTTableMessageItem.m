@@ -23,12 +23,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// This class now belong to ThankCreate!!!
 @implementation TTTableMessageItem
 
 @synthesize title     = _title;
 @synthesize caption   = _caption;
 @synthesize timestamp = _timestamp;
 @synthesize imageURL  = _imageURL;
+@synthesize thumbImageURL  = _thumbImageURL;
+@synthesize from  = _from;
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +41,8 @@
   TT_RELEASE_SAFELY(_caption);
   TT_RELEASE_SAFELY(_timestamp);
   TT_RELEASE_SAFELY(_imageURL);
+  TT_RELEASE_SAFELY(_thumbImageURL);
+  TT_RELEASE_SAFELY(_from);
 
   [super dealloc];
 }
@@ -89,6 +95,9 @@
     self.caption = [decoder decodeObjectForKey:@"caption"];
     self.timestamp = [decoder decodeObjectForKey:@"timestamp"];
     self.imageURL = [decoder decodeObjectForKey:@"imageURL"];
+    self.thumbImageURL = [decoder decodeObjectForKey:@"thumbImageURL"];
+    self.forwardItem = [decoder decodeObjectForKey:@"forwardItem"];
+    self.from = [decoder decodeObjectForKey:@"from"];
   }
   return self;
 }
@@ -109,6 +118,15 @@
   if (self.imageURL) {
     [encoder encodeObject:self.imageURL forKey:@"imageURL"];
   }
+  if (self.thumbImageURL) {
+    [encoder encodeObject:self.imageURL forKey:@"thumbImageURL"];
+  }
+  if (self.forwardItem) {
+    [encoder encodeObject:self.forwardItem forKey:@"forwardItem"];
+  }
+  if (self.from) {
+    [encoder encodeObject:self.from forKey:@"from"];
+  }    
 }
 
 

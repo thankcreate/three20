@@ -18,16 +18,33 @@
 #import "Three20UI/TTTableLinkedItemCell.h"
 
 @class TTImageView;
+@class TTView;
 
 @interface TTTableMessageItemCell : TTTableLinkedItemCell {
   UILabel*      _titleLabel;
   UILabel*      _timestampLabel;
-  TTImageView*  _imageView2;
+  TTImageView*  _iconImage;
+  TTImageView*  _thumbImage;
+    
+  TTView*       _forwardView;
+  UILabel*      _forwardTitleLabel;
+  UILabel*      _forwardTextLabel;
+  TTImageView*  _forwardThumbImage;
+    
+  UILabel*      _fromLabel;
 }
 
 @property (nonatomic, readonly, retain) UILabel*      titleLabel;
 @property (nonatomic, readonly)         UILabel*      captionLabel;
 @property (nonatomic, readonly, retain) UILabel*      timestampLabel;
-@property (nonatomic, readonly, retain) TTImageView*  imageView2;
+@property (nonatomic, readonly, retain) TTImageView*  iconImage;
+@property (nonatomic, readonly, retain) TTImageView*  thumbImage;
+@property (nonatomic, readonly, retain) TTView*  forwardView;
+
+@property (nonatomic, readonly, retain) UILabel*      forwardTitleLabel;
+@property (nonatomic, readonly, retain) UILabel*      forwardTextLabel;
+@property (nonatomic, readonly, retain) TTImageView*  forwardThumbImage;
+
+@property (nonatomic, readonly, retain) UILabel*      fromLabel;
 
 @end

@@ -113,8 +113,6 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 #pragma mark -
 #pragma mark UIScrollViewDelegate
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView {
   [super scrollViewDidScroll:scrollView];
 
@@ -141,8 +139,6 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
   }
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate {
   [super scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
 
@@ -168,15 +164,18 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:ttkDefaultFastTransitionDuration];
-  if (_controller.tableView.contentOffset.y < 0) {
-    _controller.tableView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
-  }
+    CGFloat test =  _controller.tableView.contentOffset.y;
+  //if (_controller.tableView.contentOffset.y < 0) {
+   _controller.tableView.contentOffset = CGPointMake(0, -kHeaderVisibleHeight);
+ // _controller.tableView.contentInset = UIEdgeInsetsMake(kHeaderVisibleHeight, 0.0f, 0.0f, 0.0f);
+ // }
   [UIView commitAnimations];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)modelDidFinishLoad:(id<TTModel>)model {
+    
   [_headerView setStatus:TTTableHeaderDragRefreshPullToReload];
 
   [UIView beginAnimations:nil context:NULL];

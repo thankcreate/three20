@@ -257,6 +257,7 @@
 - (void)unsetImage {
   [self stopLoading];
   self.image = nil;
+  self.urlPath = nil;
 }
 
 

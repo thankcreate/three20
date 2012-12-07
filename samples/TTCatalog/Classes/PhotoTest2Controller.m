@@ -36,7 +36,7 @@
     [[[MockPhoto alloc]
       initWithURL:@"http://farm4.static.flickr.com/3081/3164978791_3c292029f2.jpg?v=0"
       smallURL:@"http://farm4.static.flickr.com/3081/3164978791_3c292029f2_t.jpg"
-      size:CGSizeMake(320, 480)] autorelease],
+      size:CGSizeZero] autorelease],
 
     [[[MockPhoto alloc]
       initWithURL:@"http://farm3.static.flickr.com/2358/2179913094_3a1591008e.jpg"
@@ -53,7 +53,7 @@
     [[[MockPhoto alloc]
       initWithURL:@"http://farm4.static.flickr.com/3118/3122869991_c15255d889.jpg"
       smallURL:@"http://farm4.static.flickr.com/3118/3122869991_c15255d889_t.jpg"
-      size:CGSizeMake(500, 406)] autorelease],
+      size:CGSizeZero] autorelease],
     [[[MockPhoto alloc]
       initWithURL:@"http://farm2.static.flickr.com/1004/3174172875_1e7a34ccb7.jpg"
       smallURL:@"http://farm2.static.flickr.com/1004/3174172875_1e7a34ccb7_t.jpg"
