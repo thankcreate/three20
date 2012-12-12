@@ -104,6 +104,17 @@
     _lastUpdatedLabel.shadowOffset    = TTSTYLEVAR(tableRefreshHeaderTextShadowOffset);
     _lastUpdatedLabel.backgroundColor = [UIColor clearColor];
     _lastUpdatedLabel.textAlignment   = UITextAlignmentCenter;
+      
+      // 为解决第一次加入时不显示的问题，我放了一段代码在这里   ->右边的waring是SX
+      // initWithFrame最开始会进来两次，第二次会把已经初始化过的_lastUpdatedLabel覆盖
+      // 所以这里干脆强行写text
+      // 虽然丑了点，但也算是解决了，将就着用吧，人家官方新浪微博的客户端还没都没能解决这个问题呢！
+      NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+      [formatter setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+      NSString* st = [formatter stringFromDate:[NSDate date]];
+      _lastUpdatedLabel.text = [NSString stringWithFormat:
+                                @"上次更新: %@", st];
+
     [self addSubview:_lastUpdatedLabel];
 
     _statusLabel = [[UILabel alloc]
@@ -166,14 +177,11 @@
     _lastUpdatedDate = [newDate retain];
 
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateStyle:NSDateFormatterShortStyle];
-//    [formatter setTimeStyle:NSDateFormatterShortStyle];
     [formatter setDateFormat:@"yyyy年MM月dd日 hh:mm"];
       NSString* st = [formatter stringFromDate:[NSDate date]];
     _lastUpdatedLabel.text = [NSString stringWithFormat:
-                              @"上次更新: %@",
-                             // [formatter stringFromDate:_lastUpdatedDate]];
-                               st];
+                              @"上次更新: %@", st];
+//      [_lastUpdatedLabel reloadInputViews];
     [formatter release];
 
   } else {

@@ -85,4 +85,6 @@
 
 - (NSString*)titleForError:(NSError*)error;
 
+- (id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
+
 @end

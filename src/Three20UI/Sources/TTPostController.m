@@ -61,11 +61,16 @@ static const CGFloat kMarginY = 6.0f;
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     self.navigationItem.leftBarButtonItem =
-      [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
-                                                     target: self
-                                                     action: @selector(cancel)] autorelease];
+//      [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
+//                                                     target: self
+//                                                     action: @selector(cancel)] autorelease];
+      [[[UIBarButtonItem alloc] initWithTitle: @"取消"
+                                        style: UIBarButtonSystemItemCancel
+                                       target: self
+                                       action: @selector(cancel)] autorelease];
+      
     self.navigationItem.rightBarButtonItem =
-      [[[UIBarButtonItem alloc] initWithTitle: TTLocalizedString(@"Done", @"")
+      [[[UIBarButtonItem alloc] initWithTitle: @"提交"
                                         style: UIBarButtonItemStyleDone
                                        target: self
                                        action: @selector(post)] autorelease];
@@ -524,10 +529,10 @@ static const CGFloat kMarginY = 6.0f;
       && !_textView.text.isWhitespaceAndNewlines
       && !(_defaultText && [_defaultText isEqualToString:_textView.text])) {
     UIAlertView* cancelAlertView = [[[UIAlertView alloc] initWithTitle:
-      TTLocalizedString(@"Cancel", @"")
-      message:TTLocalizedString(@"Are you sure you want to cancel?", @"")
-      delegate:self cancelButtonTitle:TTLocalizedString(@"Yes", @"")
-      otherButtonTitles:TTLocalizedString(@"No", @""), nil] autorelease];
+      @"退出"
+      message:@"确定退出吗？"
+      delegate:self cancelButtonTitle:@"是"
+      otherButtonTitles:@"否", nil] autorelease];
     [cancelAlertView show];
 
   } else {

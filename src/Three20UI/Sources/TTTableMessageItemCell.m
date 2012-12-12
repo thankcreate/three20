@@ -126,7 +126,8 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
     // 针对有转发的情况
     if(item.forwardItem)
     {
-        if (item.forwardItem.caption)
+        // 转发部分不要标题了，与转发正文合并显示
+        if (item.forwardItem.title.length)
         {
             height += TTSTYLEVAR(font).ttLineHeight;
         }
@@ -143,7 +144,7 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
         {
             height += 80;
         }
-        height +=35;
+        height += 18;
     }
     if (item.from)
     {
@@ -200,7 +201,7 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
         // 2 开始右侧部分
         CGFloat width = self.contentView.width - left; // 右侧的总宽度
         CGFloat top = kTableCellSmallMargin;
-        // 2.1 标题，目前就是状态来源的昵称
+        // 2.1 标题，目前就是状态来源的昵称 转发部分不要标题了，与2.4.2合并显示
         if (_titleLabel.text.length) {
             _titleLabel.frame = CGRectMake(left, top, width, _titleLabel.font.ttLineHeight);
             top += _titleLabel.height;
@@ -384,7 +385,7 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
         }
         if (item.timestamp) {
             NSDateFormatter* formatter = [[NSDateFormatter alloc] init];        
-            [formatter setDateFormat:@"MM-dd hh:mm"];
+            [formatter setDateFormat:@"MM-dd HH:mm"];
             NSString* strTime = [formatter stringFromDate:item.timestamp];
             self.timestampLabel.text = strTime;
         }
